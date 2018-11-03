@@ -1,0 +1,17 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg
+*.eggs
+*.egg-info/
+MANIFEST
+
+bin
+include
+lib
+share
