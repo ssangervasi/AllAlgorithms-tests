@@ -32,6 +32,33 @@ describe GameOfLife do
       end
     end
   end
+
+  describe '#next_generation' do
+    let(:gen_one) do
+      <<~GEN_ONE.strip
+        ·0·
+        0·0
+      GEN_ONE
+    end
+    let(:gen_two) do
+      <<~GEN_TWO.strip
+        ·0·
+        ·0·
+      GEN_TWO
+    end
+    let(:gen_three) do
+      <<~GEN_THREE.strip
+        ···
+        ···
+      GEN_THREE
+    end
+    it 'works' do
+      gen_two_game = described_class.from_str(gen_one).next_generation
+      expect(gen_two_game.to_s).to eq gen_two
+      gen_three_game = gen_two_game.next_generation
+      expect(gen_three_game.to_s).to eq gen_three
+    end
+  end
 end
 
 describe Dead do
